@@ -64,8 +64,8 @@ public class MetaEvent extends TrackEvent {
 
 		case KEYSIGNATURE:
 			int key = eventData[0] & 0xFF;
-			int scale = eventData[1] & 0xFF;
-			dataString = "key: " + key + " scale: " + scale;
+			boolean scale = eventData[1]>0 ;
+			dataString = getKeyName(key,scale );
 			break;
 
 		case MIDICHANNELPREFIX:
@@ -101,5 +101,28 @@ public class MetaEvent extends TrackEvent {
 		if (eventLength > 0)
 			System.out.println(dataString);
 	}
+	private String getKeyName(int numOfAccidentals, boolean isMinor){
 
+		short c1=-5;
+
+		String majMin = isMinor?"minor":"major";
+		for(int i=0; i<12; i++){
+			int currentAccidentals=(c1*i)%12;
+			if(!(Math.abs(currentAccidentals)<6))
+				currentAccidentals+=12;
+			String tonicName ="";
+			if(currentAccidentals==numOfAccidentals){
+				if(numOfAccidentals<0)
+					tonicName=Constants.noteNamesWithFlats[i];
+				else{
+					tonicName=Constants.noteNamesWithSharps[i];
+				}
+				return tonicName +" "+majMin;
+			}
+			
+		}
+		
+		return null;
+		
+	}
 }

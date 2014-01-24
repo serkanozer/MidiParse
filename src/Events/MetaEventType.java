@@ -18,7 +18,6 @@ public enum MetaEventType {
 	SEQUENCERSPECIFIC(127,"Sequencer Specific");
 	
 	
-	
 	private MetaEventType(int num,String uiName){
 		this.num=num;
 		this.uiName=uiName;

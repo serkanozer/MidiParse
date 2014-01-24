@@ -22,7 +22,10 @@ public class Constants {
 	public static final short blTrackHeaderChunk = blTrackChunkHeader + blTrackChunkLength;
 	public static final short blMetaEventType = 1;
 	public static final short blEventType = 1;
-	
+	public static final String noteNamesWithSharps[] = { "C", "C#", "D", "D#", "E", "F", "F#", "G", "G#",
+			"A", "A#", "B" };
+	public static final String noteNamesWithFlats[] = { "C", "Db", "D", "Eb", "E", "F", "Gb", "G", "Ab",
+		"A", "Bb", "B" };
 	public static final short clockSignalsPerClick = 24;
 	public static final int MICROSECONDS_PER_MINUTE = 60000000;
 	public static final Map<Integer, String> eventMap;
