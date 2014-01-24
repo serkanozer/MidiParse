@@ -1,0 +1,257 @@
+Dec Function
+128 Chan 1 Note off
+129 Chan 2 Note off
+130 Chan 3 Note off
+131 Chan 4 Note off
+132 Chan 5 Note off
+133 Chan 6 Note off
+134 Chan 7 Note off
+135 Chan 8 Note off
+136 Chan 9 Note off
+137 Chan 10 Note off
+138 Chan 11 Note off
+139 Chan 12 Note off
+140 Chan 13 Note off
+141 Chan 14 Note off
+142 Chan 15 Note off
+143 Chan 16 Note off
+144 Chan 1 Note on
+145 Chan 2 Note on
+146 Chan 3 Note on
+147 Chan 4 Note on
+148 Chan 5 Note on
+149 Chan 6 Note on
+150 Chan 7 Note on
+151 Chan 8 Note on
+152 Chan 9 Note on
+153 Chan 10 Note on
+154 Chan 11 Note on
+155 Chan 12 Note on
+156 Chan 13 Note on
+157 Chan 14 Note on
+158 Chan 15 Note on
+159 Chan 16 Note on
+160 Chan 1 Polyphonic Aftertouch
+161 Chan 2 Polyphonic Aftertouch
+162 Chan 3 Polyphonic Aftertouch
+163 Chan 4 Polyphonic Aftertouch
+164 Chan 5 Polyphonic Aftertouch
+165 Chan 6 Polyphonic Aftertouch
+166 Chan 7 Polyphonic Aftertouch
+167 Chan 8 Polyphonic Aftertouch
+168 Chan 9 Polyphonic Aftertouch
+169 Chan 10 Polyphonic Aftertouch
+170 Chan 11 Polyphonic Aftertouch
+171 Chan 12 Polyphonic Aftertouch
+172 Chan 13 Polyphonic Aftertouch
+173 Chan 14 Polyphonic Aftertouch
+174 Chan 15 Polyphonic Aftertouch
+175 Chan 16 Polyphonic Aftertouch
+176 Chan 1 Control/Mode Change
+177 Chan 2 Control/Mode Change
+178 Chan 3 Control/Mode Change
+179 Chan 4 Control/Mode Change
+180 Chan 5 Control/Mode Change
+181 Chan 6 Control/Mode Change
+182 Chan 7 Control/Mode Change
+183 Chan 8 Control/Mode Change
+184 Chan 9 Control/Mode Change
+185 Chan 10 Control/Mode Change
+186 Chan 11 Control/Mode Change
+187 Chan 12 Control/Mode Change
+188 Chan 13 Control/Mode Change
+189 Chan 14 Control/Mode Change
+190 Chan 15 Control/Mode Change
+191 Chan 16 Control/Mode Change
+192 Chan 1 Program Change
+193 Chan 2 Program Change
+194 Chan 3 Program Change
+195 Chan 4 Program Change
+196 Chan 5 Program Change
+197 Chan 6 Program Change
+198 Chan 7 Program Change
+199 Chan 8 Program Change
+200 Chan 9 Program Change
+201 Chan 10 Program Change
+202 Chan 11 Program Change
+203 Chan 12 Program Change
+204 Chan 13 Program Change
+205 Chan 14 Program Change
+206 Chan 15 Program Change
+207 Chan 16 Program Change
+208 Chan 1 Channel Aftertouch
+209 Chan 2 Channel Aftertouch
+210 Chan 3 Channel Aftertouch
+211 Chan 4 Channel Aftertouch
+212 Chan 5 Channel Aftertouch
+213 Chan 6 Channel Aftertouch
+214 Chan 7 Channel Aftertouch
+215 Chan 8 Channel Aftertouch
+216 Chan 9 Channel Aftertouch
+217 Chan 10 Channel Aftertouch
+218 Chan 11 Channel Aftertouch
+219 Chan 12 Channel Aftertouch
+220 Chan 13 Channel Aftertouch
+221 Chan 14 Channel Aftertouch
+222 Chan 15 Channel Aftertouch
+223 Chan 16 Channel Aftertouch
+224 Chan 1 Pitch Wheel Control
+225 Chan 2 Pitch Wheel Control
+226 Chan 3 Pitch Wheel Control
+227 Chan 4 Pitch Wheel Control
+228 Chan 5 Pitch Wheel Control
+229 Chan 6 Pitch Wheel Control
+230 Chan 7 Pitch Wheel Control
+231 Chan 8 Pitch Wheel Control
+232 Chan 9 Pitch Wheel Control
+233 Chan 10 Pitch Wheel Control
+234 Chan 11 Pitch Wheel Control
+235 Chan 12 Pitch Wheel Control
+236 Chan 13 Pitch Wheel Control
+237 Chan 14 Pitch Wheel Control
+238 Chan 15 Pitch Wheel Control
+239 Chan 16 Pitch Wheel Control
+240 System Exclusive
+241 MIDI Time Code Qtr. Frame
+242 Song Position Pointer
+243 Song Select (Song #)
+244 Undefined (Reserved)
+245 Undefined (Reserved)
+246 Tune request
+247 End of SysEx (EOX)
+248 Timing clock
+249 Undefined (Reserved)
+250 Start
+251 Continue
+252 Stop
+253 Undefined (Reserved)
+254 Active Sensing
+255 System Reset
+0 Bank Select
+1 Modulation Wheel or Lever
+2 Breath Controller
+3 Undefined
+4 Foot Controller
+5 Portamento Time
+6 Data Entry MSB
+7 Channel Volume (formerly Main Volume)
+8 Balance
+9 Undefined
+10 Pan
+11 Expression Controller
+12 Effect Control 1
+13 Effect Control 2
+14 Undefined
+15 Undefined
+16 General Purpose Controller 1
+17 General Purpose Controller 2
+18 General Purpose Controller 3
+19 General Purpose Controller 4
+20 Undefined
+21 Undefined
+22 Undefined
+23 Undefined
+24 Undefined
+25 Undefined
+26 Undefined
+27 Undefined
+28 Undefined
+29 Undefined
+30 Undefined
+31 Undefined
+32 LSB for Control 0 (Bank Select)
+33 LSB for Control 1 (Modulation Wheel or Lever)
+34 LSB for Control 2 (Breath Controller)
+35 LSB for Control 3 (Undefined)
+36 LSB for Control 4 (Foot Controller)
+37 LSB for Control 5 (Portamento Time)
+38 LSB for Control 6 (Data Entry)
+39 LSB for Control 7 (Channel Volume, formerly Main Volume)
+40 LSB for Control 8 (Balance)
+41 LSB for Control 9 (Undefined)
+42 LSB for Control 10 (Pan)
+43 LSB for Control 11 (Expression Controller)
+44 LSB for Control 12 (Effect control 1)
+45 LSB for Control 13 (Effect control 2)
+46 LSB for Control 14 (Undefined)
+47 LSB for Control 15 (Undefined)
+48 LSB for Control 16 (General Purpose Controller 1)
+49 LSB for Control 17 (General Purpose Controller 2)
+50 LSB for Control 18 (General Purpose Controller 3)
+51 LSB for Control 19 (General Purpose Controller 4)
+52 LSB for Control 20 (Undefined)
+53 LSB for Control 21 (Undefined)
+54 LSB for Control 22 (Undefined)
+55 LSB for Control 23 (Undefined)
+56 LSB for Control 24 (Undefined)
+57 LSB for Control 25 (Undefined)
+58 LSB for Control 26 (Undefined)
+59 LSB for Control 27 (Undefined)
+60 LSB for Control 28 (Undefined)
+61 LSB for Control 29 (Undefined)
+62 LSB for Control 30 (Undefined)
+63 LSB for Control 31 (Undefined)
+64 Damper Pedal on/off (Sustain)
+65 Portamento On/Off
+66 Sostenuto On/Off
+67 Soft Pedal On/Off
+68 Legato Footswitch
+69 Hold 2
+70 Sound Controller 1 (default: Sound Variation)
+71 Sound Controller 2 (default: Timbre/Harmonic Intens.)
+72 Sound Controller 3 (default: Release Time)
+73 Sound Controller 4 (default: Attack Time)
+74 Sound Controller 5 (default: Brightness)
+75 Sound Controller 6 (default: Decay Time - see MMA RP-021)
+76 Sound Controller 7 (default: Vibrato Rate - see MMA RP-021)
+77 Sound Controller 8 (default: Vibrato Depth - see MMA RP-021)
+78 Sound Controller 9 (default: Vibrato Delay - see MMA RP-021)
+79 Sound Controller 10 (default undefined - see MMA RP-021)
+80 General Purpose Controller 5
+81 General Purpose Controller 6
+82 General Purpose Controller 7
+83 General Purpose Controller 8
+84 Portamento Control
+85 Undefined
+86 Undefined
+87 Undefined
+88 High Resolution Velocity Prefix
+89 Undefined
+90 Undefined
+91 Effects 1 Depth (default: Reverb Send Level - see MMA RP-023) (formerly External Effects Depth)
+92 Effects 2 Depth (formerly Tremolo Depth)
+93 Effects 3 Depth (default: Chorus Send Level - see MMA RP-023) (formerly Chorus Depth)
+94 Effects 4 Depth (formerly Celeste [Detune] Depth)
+95 Effects 5 Depth (formerly Phaser Depth)
+96 Data Increment (Data Entry +1) (see MMA RP-018)
+97 Data Decrement (Data Entry -1) (see MMA RP-018)
+98 Non-Registered Parameter Number (NRPN) - LSB
+99 Non-Registered Parameter Number (NRPN) - MSB
+100 Registered Parameter Number (RPN) - LSB*
+101 Registered Parameter Number (RPN) - MSB*
+102 Undefined
+103 Undefined
+104 Undefined
+105 Undefined
+106 Undefined
+107 Undefined
+108 Undefined
+109 Undefined
+110 Undefined
+111 Undefined
+112 Undefined
+113 Undefined
+114 Undefined
+115 Undefined
+116 Undefined
+117 Undefined
+118 Undefined
+119 Undefined
+120 [Channel Mode Message] All Sound Off
+121 [Channel Mode Message] Reset All Controllers (See MMA RP-015)
+122 [Channel Mode Message] Local Control On/Off
+123 [Channel Mode Message] All Notes Off
+124 [Channel Mode Message] Omni Mode Off (+ all notes off)
+125 [Channel Mode Message] Omni Mode On (+ all notes off)
+126 [Channel Mode Message] Mono Mode On (+ poly off, + all notes off)
+127 [Channel Mode Message] Poly Mode On (+ mono off, +all notes off)
