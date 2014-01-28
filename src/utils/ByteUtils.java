@@ -26,13 +26,19 @@ public class ByteUtils {
 	}
 
 	public static int byteToInt(byte b) {
-		if (b < 0) {
-			return b + 256;
-		} else
-			return b;
+		return b &0xFF;
 	}
 
 	public static int bytesToInt(byte[] input) {
+		if(input.length<4){
+			byte [] extended = new byte[4];
+			int i;
+			for(i=0; i<4-input.length; i++)
+				extended[i]=0;
+			for(; i<4; i++)
+				extended[i]=input[i-4+input.length];
+			input =extended;
+		}
 		ByteBuffer wrapped = ByteBuffer.wrap(input);
 		int length = wrapped.getInt();
 		return length;

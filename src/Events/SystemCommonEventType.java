@@ -14,16 +14,16 @@ public enum SystemCommonEventType {
 		this.uiName=uiName;
 	}
 	public static SystemCommonEventType getFromNumber(int number){
-		for (SystemCommonEventType meta : values()) {
-			if(meta.num==number)
-				return meta;
+		for (SystemCommonEventType systemCommonEventType : values()) {
+			if(systemCommonEventType.num==number)
+				return systemCommonEventType;
 		}
 		return null;
 	}
 	public static String getUiNameFromNumber(int number){
-		for (SystemCommonEventType meta : values()) {
-			if(meta.num==number)
-				return meta.uiName;
+		for (SystemCommonEventType systemCommonEventType : values()) {
+			if(systemCommonEventType.num==number)
+				return systemCommonEventType.uiName;
 		}
 		return null;
 	}

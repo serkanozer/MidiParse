@@ -4,6 +4,7 @@ import utils.Constants;
 
 public class TrackEvent {
 	
+	long occurenceTime;
 	long deltaTime;
 	int eventType;
 	public TrackEvent(long deltaTime,int eventType){
@@ -16,6 +17,12 @@ public class TrackEvent {
 	public void setDeltaTime(long deltaTime) {
 		this.deltaTime = deltaTime;
 	}
+	public void setOccurenceTime(long occurenceTime){
+		this.occurenceTime = occurenceTime;
+	}
+	public long getOccurenceTime(){
+		return occurenceTime;
+	}
 	public int getEventType() {
 		return eventType;
 	}
@@ -24,7 +31,7 @@ public class TrackEvent {
 	}
 	public void printInfo(){
 
-		System.out.println("deltaTime "+ " "+deltaTime+" eventType "+ " "+Constants.eventMap.get(eventType));
+		System.out.println("Occured at " +occurenceTime+ " deltaTime "+ " "+deltaTime+" eventType "+ " "+Constants.eventMap.get(eventType));
 		
 	}
 	public int size(){

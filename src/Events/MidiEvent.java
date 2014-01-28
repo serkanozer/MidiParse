@@ -57,10 +57,9 @@ public class MidiEvent extends TrackEvent {
 			firstParamaterValue = Integer.toString(paramater1);
 			break;
 		case PITCHBEND:
-			firstParameterName = "pitch value (LSB)";
-			firstParamaterValue = Integer.toString(paramater1);
-			secondParameterName = "pitch value (MSB)";
-			secondParamaterValue = Integer.toString(paramater2);
+			firstParameterName = "Pitch bend:";
+			int pitchBend = getPitchBend(paramater1, paramater2);
+			firstParamaterValue = getPitchBend(paramater1, paramater2)+" "+getPitchBendRatio(pitchBend);
 			break;
 		default:
 			break;
@@ -73,15 +72,22 @@ public class MidiEvent extends TrackEvent {
 	}
 
 	public String getNoteName(int noteNumber) {
-		String noteNames[] = { "C", "C#", "D", "D#", "E", "F", "F#", "G", "G#",
-				"A", "A#", "B" };
+		String noteNames[] = Constants.noteNamesWithSharps;
 		return noteNames[noteNumber % noteNames.length];
 	}
-
+	private int getPitchBend(int LSB, int MSB){
+		int pitchBend = MSB;
+		pitchBend <<=7;
+		pitchBend |=LSB;
+		return pitchBend;
+	}
+	private double getPitchBendRatio(int pitchBend){
+		return (pitchBend-8192)/(4096*12.0);
+	}
 	public int size() {
 		MidiEventType midiEventType = getMidiEventType();
 		if(midiEventType==MidiEventType.PROGRAMCHANGE||midiEventType==MidiEventType.NOTEAFTERTOUCH)
-			return 1;
+			return 1;	//these events have only one parameters while others have two.
 		return 2;
 	}
 

@@ -17,16 +17,16 @@ public enum MidiEventType {
 		this.uiName=uiName;
 	}
 	public static MidiEventType getFromNumber(int number){
-		for (MidiEventType meta : values()) {
-			if(meta.num==number)
-				return meta;
+		for (MidiEventType midiEventType : values()) {
+			if(midiEventType.num==number)
+				return midiEventType;
 		}
 		return null;
 	}
 	public static String getUiNameFromNumber(int number){
-		for (MidiEventType meta : values()) {
-			if(meta.num==number)
-				return meta.uiName;
+		for (MidiEventType midiEventType : values()) {
+			if(midiEventType.num==number)
+				return midiEventType.uiName;
 		}
 		return null;
 	}

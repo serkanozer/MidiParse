@@ -23,16 +23,16 @@ public enum MetaEventType {
 		this.uiName=uiName;
 	}
 	public static MetaEventType getFromNumber(int number){
-		for (MetaEventType meta : values()) {
-			if(meta.num==number)
-				return meta;
+		for (MetaEventType metaEventType : values()) {
+			if(metaEventType.num==number)
+				return metaEventType;
 		}
 		return null;
 	}
 	public static String getUiNameFromNumber(int number){
-		for (MetaEventType meta : values()) {
-			if(meta.num==number)
-				return meta.uiName;
+		for (MetaEventType metaEventType : values()) {
+			if(metaEventType.num==number)
+				return metaEventType.uiName;
 		}
 		return null;
 	}

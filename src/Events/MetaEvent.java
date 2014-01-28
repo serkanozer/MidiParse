@@ -43,7 +43,7 @@ public class MetaEvent extends TrackEvent {
 	public void printInfo() {
 		System.out.println("Meta event");
 		super.printInfo();
-		System.out.println("meta type "
+		System.out.println("Meta event type "
 				+ MetaEventType.getUiNameFromNumber(ByteUtils.byteToInt(type)));
 		MetaEventType metaEventType = MetaEventType.getFromNumber(ByteUtils
 				.byteToInt(type));
@@ -82,18 +82,18 @@ public class MetaEvent extends TrackEvent {
 			int sec = eventData[2] & 0xFF;
 			int fr = eventData[3] & 0xFF;
 			int subfr = eventData[4] & 0xFF;
-			dataString ="hour: "+hour+" min: "+min+" sec: "+sec+" fr: "+fr+" subfr: "+subfr;
+			dataString ="hour: "+hour+" min: "+min+" sec: "+sec+" frame: "+fr+" subframe: "+subfr;
 			break;
 		case ENDOFTRACK:
 			break;
 		case TIMESIGNATURE:
 			int numerator = eventData[0] & 0xFF;
-			int denominator = eventData[1] & 0xFF;
+			int denominator = (int) Math.pow(eventData[1] & 0xFF, 2);
 			int metronomePulse = eventData[2] & 0xFF;
 			int numOf32nds = eventData[3] & 0xFF;
-			dataString = numerator + "/" + denominator + " beats: "
+			dataString = numerator + "/" + denominator + " metronome click "
 					+ metronomePulse / Constants.clockSignalsPerClick
-					+ " numOf32nds in one clock: " + numOf32nds;
+					+ " numOf32nds in a quarter note: " + numOf32nds;
 			break;
 		default:
 			break;

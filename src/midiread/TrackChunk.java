@@ -3,6 +3,8 @@ package midiread;
 import java.util.ArrayList;
 import java.util.Arrays;
 
+import org.apache.commons.cli.Options;
+
 import utils.ByteUtils;
 import utils.Constants;
 import Events.MetaEvent;
@@ -22,6 +24,7 @@ public class TrackChunk {
 
 	public void parseEvents(int current) {
 		setHeader(current);
+		TrackEvent lastEvent = new TrackEvent();
 		int end = start + Constants.blTrackChunkHeader
 				+ Constants.blTrackChunkLength + trackChunkHeader.tracklength();
 		current = current + Constants.blTrackChunkHeader
@@ -38,6 +41,8 @@ public class TrackChunk {
 			current += trackEvent.size();
 			trackEvent.setDeltaTime(deltaTime);
 			trackEvent.setEventType(eventType);
+			trackEvent.setOccurenceTime(lastEvent.getOccurenceTime()+deltaTime);
+			lastEvent = trackEvent;
 			trackEvents.add(trackEvent);
 		}
 	}
@@ -83,7 +88,7 @@ public class TrackChunk {
 			// eventType == 0xF0
 			byte firstByte = bytes[current];
 			byte manufacturerId[];
-
+			//manufacturer id is either 3 byte or 1 byte. If first byte  is 0 it is 3 else it is 1.
 			if (firstByte != 0) {
 				manufacturerId = ByteUtils.byteCopy(bytes, current, 3);
 				current = current + 3;
@@ -129,10 +134,27 @@ public class TrackChunk {
 		this.bytes = bytes;
 	}
 
-	public void printInfo() {
+	public void printInfo(int events) {
 		trackChunkHeader.printInfo();
+		
 		for (TrackEvent trackEvent : trackEvents) {
-			trackEvent.printInfo();
+			boolean b=false;
+			if(events==0)
+				b=true;
+			else if((events&1)>0)
+				b=b||(trackEvent instanceof MidiEvent);
+			else if((events&2)>0)
+				b=b||(trackEvent instanceof MetaEvent);
+			else if((events&4)>0)
+				b=b||(trackEvent instanceof SystemExclusiveEvent);
+			else if((events&8)>0)
+				b=b||(trackEvent instanceof SystemCommonEvent);
+			else if((events&16)>0)
+				b=b||(trackEvent instanceof MidiEvent && trackEvent.getEventType() >=128 && trackEvent.getEventType() <159 );
+			if (b) 
+				trackEvent.printInfo();		
+			
+
 		}
 	}
 

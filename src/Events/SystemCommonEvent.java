@@ -23,6 +23,7 @@ public class SystemCommonEvent extends TrackEvent {
 
 	int paramater2;
 
+	@SuppressWarnings("unused")
 	public void printInfo() {
 		System.out.println("Midi event");
 		super.printInfo();
@@ -34,17 +35,11 @@ public class SystemCommonEvent extends TrackEvent {
 		switch (systemCommonEventType) {
 		case QUARTERFRAME:
 			firstParameterName = "Message type , values";
-			int type = paramater1 & 70;
-			type >>= 4;
-			type &= 0x08;
-			int values = paramater1 & 0x0F;
-			firstParamaterValue = type + "," + values;
+			firstParamaterValue = getQuarterFrame(paramater1);
 			break;
 		case SONGPOSITIONPOINTER:
-			firstParameterName = "LSB";
-			firstParamaterValue = Integer.toString(paramater1);
-			secondParameterName = "MSB";
-			secondParamaterValue = Integer.toString(paramater2);
+			firstParameterName = "Song Position Pointer";
+			firstParamaterValue = getSongPositionPointer(paramater1, paramater2);
 			break;
 		case SONGSELECT:
 			firstParameterName = "Selected Song";
@@ -56,8 +51,7 @@ public class SystemCommonEvent extends TrackEvent {
 		if (firstParameterName != null && firstParamaterValue != null)
 			System.out.println(firstParameterName + " " + firstParamaterValue);
 		if (secondParameterName != null && secondParamaterValue != null)
-			System.out
-					.println(secondParameterName + " " + secondParamaterValue);
+			System.out.println(secondParameterName + " " + secondParamaterValue);
 	}
 	public int size() {
 		SystemCommonEventType systemCommonEventType = getSystemCommonEventType();
@@ -67,5 +61,18 @@ public class SystemCommonEvent extends TrackEvent {
 	}
 	private SystemCommonEventType getSystemCommonEventType() {
 		return SystemCommonEventType.getFromNumber(this.eventType);
+	}
+	private String getSongPositionPointer(int LSB, int MSB){
+		int songPositionPointer = MSB;
+		songPositionPointer <<=7;
+		songPositionPointer |=LSB;
+		return Integer.toString(songPositionPointer);
+	}
+	private String getQuarterFrame(int input){
+		int type = input & 70;
+		type >>= 4;
+		type &= 0x08;
+		int values = input & 0x0F;
+		return type + "," + values;
 	}
 }
