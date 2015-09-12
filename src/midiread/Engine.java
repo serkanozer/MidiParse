@@ -26,10 +26,10 @@ public class Engine {
 		Option h = new Option("h", false, "Prints header content of midi file");
 		Option file = new Option("file", false, "Name of midi file");
 		Option t = OptionBuilder.withArgName("track number").hasArg()
-				.withDescription("Print the required track").create("t");
-		Option midi = new Option("midi", false, "Print midi events");
-		Option meta = new Option("meta", false, "Print meta events");
-		Option sysEx = new Option("sys", false, "Print system exclusive events");
+				.withDescription("Prints the required track").create("t");
+		Option midi = new Option("midi", false, "Prints midi events");
+		Option meta = new Option("meta", false, "Prints meta events");
+		Option sysEx = new Option("sys", false, "Prints system exclusive events");
 		Option note = new Option("note", false,
 				"Print note on and note off events");
 
@@ -44,8 +44,10 @@ public class Engine {
 		options.addOption(note);
 
 		HelpFormatter formatter = new HelpFormatter();
-		if (args.length < 1)
+		if (args.length < 1){
 			formatter.printHelp("MidiParse .midi", options);
+			System.exit(0);	
+		}
 		CommandLineParser parser = new GnuParser();
 		try {
 			// parse the command line arguments
