@@ -8,9 +8,9 @@ See src/midiread/Engine.java for how to read midi files and create midi Track ob
 usage: MidiParse midifile options  
  -h                  Prints header content of midi file  
  -help               Prints this help message  
- -meta               Print meta events  
- -midi               Print midi events  
- -note               Print note on and note off events  
- -sys                Print system exclusive events  
- -t <track number>   Print the required track  
+ -meta               Prints meta events  
+ -midi               Prints midi events  
+ -note               Prints note on and note off events  
+ -sys                Prints system exclusive events  
+ -t <track number>   Prints the required track  
 
